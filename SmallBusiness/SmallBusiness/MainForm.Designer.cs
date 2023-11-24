@@ -35,7 +35,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.homeBtn = new System.Windows.Forms.Button();
             this.itemsBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.profileButton = new System.Windows.Forms.Button();
+            this.statusBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +89,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.IndianRed;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.statusBtn);
+            this.panel1.Controls.Add(this.profileButton);
             this.panel1.Controls.Add(this.homeBtn);
             this.panel1.Controls.Add(this.itemsBtn);
             this.panel1.Location = new System.Drawing.Point(1, -1);
@@ -122,18 +124,31 @@
             this.itemsBtn.Text = "All items";
             this.itemsBtn.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // profileButton
             // 
-            this.button1.BackColor = System.Drawing.Color.IndianRed;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(0, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 75);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Profile";
-            this.button1.UseVisualStyleBackColor = false;
+            this.profileButton.BackColor = System.Drawing.Color.IndianRed;
+            this.profileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profileButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.profileButton.Location = new System.Drawing.Point(0, 165);
+            this.profileButton.Name = "profileButton";
+            this.profileButton.Size = new System.Drawing.Size(141, 75);
+            this.profileButton.TabIndex = 6;
+            this.profileButton.Text = "Profile";
+            this.profileButton.UseVisualStyleBackColor = false;
+            // 
+            // statusBtn
+            // 
+            this.statusBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.statusBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.statusBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.statusBtn.Location = new System.Drawing.Point(0, 246);
+            this.statusBtn.Name = "statusBtn";
+            this.statusBtn.Size = new System.Drawing.Size(141, 75);
+            this.statusBtn.TabIndex = 5;
+            this.statusBtn.Text = "Order statuses";
+            this.statusBtn.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -163,7 +178,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button homeBtn;
         private System.Windows.Forms.Button itemsBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button profileButton;
+        private System.Windows.Forms.Button statusBtn;
     }
 }
 

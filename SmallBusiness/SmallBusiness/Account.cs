@@ -14,6 +14,15 @@ namespace SmallBusiness
         private String email;
         private String password;
         private String username;
+        private List<Item> items;
+        private List<Order> orders;
 
+
+        public Account(String email, String password, String username)
+        {
+            this.email = email;
+            this.password = password;
+            this.username = username;
+        }
     }
 }
