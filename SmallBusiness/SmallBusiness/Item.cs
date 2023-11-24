@@ -11,23 +11,20 @@ namespace SmallBusiness
     {
         //instance variables
         private int id;
-        private int incrementID = 1;
         private String title;
         private String description;
         private decimal price;
         private int inStock;
-        private String username;
         private int daysToShip;
         //private image;
 
-        public Item(String title, String description, decimal price, int stock, String username, int daysToShip)
+        public Item(int id, String title, String description, decimal price, int stock, int daysToShip)
         {
-            this.id = incrementID++;
+            this.id = id;
             this.title = title;
             this.description = description;
             this.price = price;
             this.inStock = stock;
-            this.username = username;
             this.daysToShip = daysToShip;
         }
     }
