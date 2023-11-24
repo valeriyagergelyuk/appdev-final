@@ -8,5 +8,10 @@ namespace SmallBusiness
 {
     internal class Item
     {
+        //instance variables
+        private String title;
+        private String description;
+        private decimal price;
+        private String username;
     }
 }
