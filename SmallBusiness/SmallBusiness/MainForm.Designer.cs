@@ -48,9 +48,10 @@
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Bodoni MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginBtn.Location = new System.Drawing.Point(894, -1);
+            this.loginBtn.Location = new System.Drawing.Point(1341, -2);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(207, 58);
+            this.loginBtn.Size = new System.Drawing.Size(310, 89);
             this.loginBtn.TabIndex = 0;
             this.loginBtn.Text = "Change users";
             this.loginBtn.UseVisualStyleBackColor = false;
@@ -60,10 +61,11 @@
             this.titleLabel.BackColor = System.Drawing.Color.DarkSalmon;
             this.titleLabel.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.titleLabel.Location = new System.Drawing.Point(-2, -1);
+            this.titleLabel.Location = new System.Drawing.Point(-3, -2);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Padding = new System.Windows.Forms.Padding(70, 10, 0, 0);
-            this.titleLabel.Size = new System.Drawing.Size(900, 58);
+            this.titleLabel.Padding = new System.Windows.Forms.Padding(105, 15, 0, 0);
+            this.titleLabel.Size = new System.Drawing.Size(1350, 89);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Small Business";
             // 
@@ -73,10 +75,11 @@
             this.searchLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.searchLabel.Location = new System.Drawing.Point(-4, 0);
+            this.searchLabel.Location = new System.Drawing.Point(-6, 0);
+            this.searchLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.searchLabel.Size = new System.Drawing.Size(1095, 37);
+            this.searchLabel.Padding = new System.Windows.Forms.Padding(0, 0, 45, 0);
+            this.searchLabel.Size = new System.Drawing.Size(1642, 56);
             this.searchLabel.TabIndex = 2;
             this.searchLabel.Text = "Search items";
             this.searchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -84,9 +87,10 @@
             // searchBox
             // 
             this.searchBox.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBox.Location = new System.Drawing.Point(699, 9);
+            this.searchBox.Location = new System.Drawing.Point(1048, 14);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(250, 21);
+            this.searchBox.Size = new System.Drawing.Size(373, 28);
             this.searchBox.TabIndex = 3;
             // 
             // exitBtn
@@ -95,9 +99,10 @@
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.exitBtn.Location = new System.Drawing.Point(807, -1);
+            this.exitBtn.Location = new System.Drawing.Point(1210, -2);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(91, 58);
+            this.exitBtn.Size = new System.Drawing.Size(136, 89);
             this.exitBtn.TabIndex = 4;
             this.exitBtn.Text = "Exit App";
             this.exitBtn.UseVisualStyleBackColor = false;
@@ -109,10 +114,11 @@
             this.tabControl.Controls.Add(this.profilePage);
             this.tabControl.Controls.Add(this.ordersPage);
             this.tabControl.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(-4, 63);
+            this.tabControl.Location = new System.Drawing.Point(-6, 97);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1095, 565);
+            this.tabControl.Size = new System.Drawing.Size(1642, 869);
             this.tabControl.TabIndex = 5;
             // 
             // homePage
@@ -120,51 +126,56 @@
             this.homePage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.homePage.Controls.Add(this.searchBox);
             this.homePage.Controls.Add(this.searchLabel);
-            this.homePage.Location = new System.Drawing.Point(4, 26);
+            this.homePage.Location = new System.Drawing.Point(4, 30);
+            this.homePage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.homePage.Name = "homePage";
-            this.homePage.Padding = new System.Windows.Forms.Padding(3);
-            this.homePage.Size = new System.Drawing.Size(1087, 535);
+            this.homePage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.homePage.Size = new System.Drawing.Size(1634, 835);
             this.homePage.TabIndex = 0;
             this.homePage.Text = "Home";
             // 
             // allItemsPage
             // 
             this.allItemsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.allItemsPage.Location = new System.Drawing.Point(4, 26);
+            this.allItemsPage.Location = new System.Drawing.Point(4, 30);
+            this.allItemsPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.allItemsPage.Name = "allItemsPage";
-            this.allItemsPage.Padding = new System.Windows.Forms.Padding(3);
-            this.allItemsPage.Size = new System.Drawing.Size(1087, 535);
+            this.allItemsPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.allItemsPage.Size = new System.Drawing.Size(1634, 835);
             this.allItemsPage.TabIndex = 1;
             this.allItemsPage.Text = "All items";
             // 
             // profilePage
             // 
             this.profilePage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.profilePage.Location = new System.Drawing.Point(4, 26);
+            this.profilePage.Location = new System.Drawing.Point(4, 30);
+            this.profilePage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.profilePage.Name = "profilePage";
-            this.profilePage.Size = new System.Drawing.Size(1087, 535);
+            this.profilePage.Size = new System.Drawing.Size(1634, 835);
             this.profilePage.TabIndex = 2;
             this.profilePage.Text = "Profile";
             // 
             // ordersPage
             // 
             this.ordersPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ordersPage.Location = new System.Drawing.Point(4, 26);
+            this.ordersPage.Location = new System.Drawing.Point(4, 30);
+            this.ordersPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ordersPage.Name = "ordersPage";
-            this.ordersPage.Size = new System.Drawing.Size(1087, 535);
+            this.ordersPage.Size = new System.Drawing.Size(1634, 835);
             this.ordersPage.TabIndex = 3;
             this.ordersPage.Text = "Order Statuses";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1091, 624);
+            this.ClientSize = new System.Drawing.Size(1636, 960);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.loginBtn);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.Text = "Small Business";
             this.tabControl.ResumeLayout(false);

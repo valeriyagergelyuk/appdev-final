@@ -19,3 +19,17 @@ C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusi
 C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.exe
 C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.pdb
 C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.LoginUser.resources
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\bin\Debug\BusinessDatabase.mdf
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\bin\Debug\BusinessDatabase_log.ldf
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\bin\Debug\SmallBusiness.exe.config
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\bin\Debug\SmallBusiness.exe
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\bin\Debug\SmallBusiness.pdb
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.csproj.AssemblyReference.cache
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.BuyerForm.resources
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.LoginUser.resources
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.MainForm.resources
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.Properties.Resources.resources
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.csproj.GenerateResource.cache
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.csproj.CoreCompileInputs.cache
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.exe
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.pdb
