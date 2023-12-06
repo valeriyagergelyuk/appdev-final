@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,16 @@ namespace SmallBusiness
 {
     public partial class MainForm : Form
     {
+
         public MainForm()
         {
             InitializeComponent();
+        }
+
+
+        private void allItemsPage_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
