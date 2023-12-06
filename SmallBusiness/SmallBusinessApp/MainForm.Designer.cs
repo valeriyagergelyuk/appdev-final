@@ -32,10 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.titleLabel = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Home = new System.Windows.Forms.TabPage();
             this.productsTabPage = new System.Windows.Forms.TabPage();
             this.allProductsLabel = new System.Windows.Forms.Label();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.businessDataSet = new SmallBusinessApp.BusinessDataSet();
             this.addProductButton = new System.Windows.Forms.Button();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.daysTextBox = new System.Windows.Forms.TextBox();
@@ -61,22 +67,31 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.productsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.businessDataSet = new SmallBusinessApp.BusinessDataSet();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productsTableAdapter = new SmallBusinessApp.BusinessDataSetTableAdapters.ProductsTableAdapter();
             this.tableAdapterManager = new SmallBusinessApp.BusinessDataSetTableAdapters.TableAdapterManager();
+            this.ordersTab = new System.Windows.Forms.TabPage();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordersTableAdapter = new SmallBusinessApp.BusinessDataSetTableAdapters.OrdersTableAdapter();
+            this.ordersDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.odersLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.productsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingNavigator)).BeginInit();
-            this.productsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingNavigator)).BeginInit();
+            this.productsBindingNavigator.SuspendLayout();
+            this.ordersTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -84,33 +99,24 @@
             this.titleLabel.BackColor = System.Drawing.Color.DarkSalmon;
             this.titleLabel.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.titleLabel.Location = new System.Drawing.Point(-6, 32);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titleLabel.Location = new System.Drawing.Point(-4, 21);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Padding = new System.Windows.Forms.Padding(105, 15, 0, 0);
-            this.titleLabel.Size = new System.Drawing.Size(1460, 89);
+            this.titleLabel.Padding = new System.Windows.Forms.Padding(70, 10, 0, 0);
+            this.titleLabel.Size = new System.Drawing.Size(973, 58);
             this.titleLabel.TabIndex = 2;
             this.titleLabel.Text = "Small Business";
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.Home);
             this.tabControl1.Controls.Add(this.productsTabPage);
-            this.tabControl1.Location = new System.Drawing.Point(0, 125);
+            this.tabControl1.Controls.Add(this.ordersTab);
+            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(0, 81);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1854, 898);
+            this.tabControl1.Size = new System.Drawing.Size(1236, 584);
             this.tabControl1.TabIndex = 18;
-            // 
-            // Home
-            // 
-            this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Home.Location = new System.Drawing.Point(4, 29);
-            this.Home.Name = "Home";
-            this.Home.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Home.Size = new System.Drawing.Size(1846, 865);
-            this.Home.TabIndex = 0;
-            this.Home.Text = "Home";
             // 
             // productsTabPage
             // 
@@ -128,10 +134,11 @@
             this.productsTabPage.Controls.Add(this.priceLabel);
             this.productsTabPage.Controls.Add(this.daysLabel);
             this.productsTabPage.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsTabPage.Location = new System.Drawing.Point(4, 29);
+            this.productsTabPage.Location = new System.Drawing.Point(4, 25);
+            this.productsTabPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.productsTabPage.Name = "productsTabPage";
-            this.productsTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.productsTabPage.Size = new System.Drawing.Size(1846, 865);
+            this.productsTabPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.productsTabPage.Size = new System.Drawing.Size(1228, 555);
             this.productsTabPage.TabIndex = 1;
             this.productsTabPage.Text = "Products";
             // 
@@ -140,10 +147,9 @@
             this.allProductsLabel.AutoSize = true;
             this.allProductsLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.allProductsLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.allProductsLabel.Location = new System.Drawing.Point(573, 18);
-            this.allProductsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.allProductsLabel.Location = new System.Drawing.Point(378, 12);
             this.allProductsLabel.Name = "allProductsLabel";
-            this.allProductsLabel.Size = new System.Drawing.Size(500, 39);
+            this.allProductsLabel.Size = new System.Drawing.Size(330, 24);
             this.allProductsLabel.TabIndex = 29;
             this.allProductsLabel.Text = "All Products Currently Available";
             // 
@@ -159,276 +165,13 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.productsDataGridView.DataSource = this.productsBindingSource;
-            this.productsDataGridView.Location = new System.Drawing.Point(573, 105);
+            this.productsDataGridView.Location = new System.Drawing.Point(382, 68);
+            this.productsDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.productsDataGridView.Name = "productsDataGridView";
             this.productsDataGridView.RowHeadersWidth = 62;
             this.productsDataGridView.RowTemplate.Height = 28;
-            this.productsDataGridView.Size = new System.Drawing.Size(1245, 714);
+            this.productsDataGridView.Size = new System.Drawing.Size(830, 464);
             this.productsDataGridView.TabIndex = 28;
-            // 
-            // addProductButton
-            // 
-            this.addProductButton.BackColor = System.Drawing.Color.Salmon;
-            this.addProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addProductButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addProductButton.Location = new System.Drawing.Point(298, 478);
-            this.addProductButton.Name = "addProductButton";
-            this.addProductButton.Size = new System.Drawing.Size(190, 74);
-            this.addProductButton.TabIndex = 28;
-            this.addProductButton.Text = "Add Product";
-            this.addProductButton.UseVisualStyleBackColor = false;
-            this.addProductButton.Click += new System.EventHandler(this.addProductButton_Click);
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(243, 175);
-            this.descriptionTextBox.Multiline = true;
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(302, 102);
-            this.descriptionTextBox.TabIndex = 25;
-            // 
-            // daysTextBox
-            // 
-            this.daysTextBox.Location = new System.Drawing.Point(243, 382);
-            this.daysTextBox.Name = "daysTextBox";
-            this.daysTextBox.Size = new System.Drawing.Size(302, 28);
-            this.daysTextBox.TabIndex = 27;
-            // 
-            // addProductLabel
-            // 
-            this.addProductLabel.AutoSize = true;
-            this.addProductLabel.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProductLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addProductLabel.Location = new System.Drawing.Point(34, 17);
-            this.addProductLabel.Name = "addProductLabel";
-            this.addProductLabel.Size = new System.Drawing.Size(233, 39);
-            this.addProductLabel.TabIndex = 19;
-            this.addProductLabel.Text = "Add Product :";
-            // 
-            // priceTextBox
-            // 
-            this.priceTextBox.Location = new System.Drawing.Point(243, 317);
-            this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(302, 28);
-            this.priceTextBox.TabIndex = 26;
-            // 
-            // productNameLabel
-            // 
-            this.productNameLabel.AutoSize = true;
-            this.productNameLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.productNameLabel.Location = new System.Drawing.Point(57, 105);
-            this.productNameLabel.Name = "productNameLabel";
-            this.productNameLabel.Size = new System.Drawing.Size(159, 23);
-            this.productNameLabel.TabIndex = 20;
-            this.productNameLabel.Text = "Product Name:";
-            // 
-            // descriptionLabel
-            // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.descriptionLabel.Location = new System.Drawing.Point(94, 183);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(122, 23);
-            this.descriptionLabel.TabIndex = 21;
-            this.descriptionLabel.Text = "Description:";
-            // 
-            // productNameTextBox
-            // 
-            this.productNameTextBox.Location = new System.Drawing.Point(243, 105);
-            this.productNameTextBox.Name = "productNameTextBox";
-            this.productNameTextBox.Size = new System.Drawing.Size(302, 28);
-            this.productNameTextBox.TabIndex = 24;
-            // 
-            // priceLabel
-            // 
-            this.priceLabel.AutoSize = true;
-            this.priceLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.priceLabel.Location = new System.Drawing.Point(154, 317);
-            this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(62, 23);
-            this.priceLabel.TabIndex = 22;
-            this.priceLabel.Text = "Price:";
-            // 
-            // daysLabel
-            // 
-            this.daysLabel.AutoSize = true;
-            this.daysLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.daysLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.daysLabel.Location = new System.Drawing.Point(-2, 388);
-            this.daysLabel.Name = "daysLabel";
-            this.daysLabel.Size = new System.Drawing.Size(218, 23);
-            this.daysLabel.TabIndex = 23;
-            this.daysLabel.Text = "Days Before Shipping:";
-            // 
-            // exitBtn
-            // 
-            this.exitBtn.BackColor = System.Drawing.Color.Salmon;
-            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.exitBtn.Location = new System.Drawing.Point(1411, 32);
-            this.exitBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(136, 89);
-            this.exitBtn.TabIndex = 6;
-            this.exitBtn.Text = "Exit App";
-            this.exitBtn.UseVisualStyleBackColor = false;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
-            // 
-            // loginBtn
-            // 
-            this.loginBtn.BackColor = System.Drawing.Color.IndianRed;
-            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginBtn.Font = new System.Drawing.Font("Bodoni MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginBtn.Location = new System.Drawing.Point(1544, 32);
-            this.loginBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(310, 89);
-            this.loginBtn.TabIndex = 5;
-            this.loginBtn.Text = "Change users";
-            this.loginBtn.UseVisualStyleBackColor = false;
-            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
-            // 
-            // productsBindingNavigator
-            // 
-            this.productsBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.productsBindingNavigator.BindingSource = this.productsBindingSource;
-            this.productsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.productsBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.productsBindingNavigator.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.productsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.productsBindingNavigatorSaveItem});
-            this.productsBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.productsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.productsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.productsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.productsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.productsBindingNavigator.Name = "productsBindingNavigator";
-            this.productsBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.productsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productsBindingNavigator.Size = new System.Drawing.Size(1854, 33);
-            this.productsBindingNavigator.TabIndex = 19;
-            this.productsBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 31);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
-            // 
-            // productsBindingNavigatorSaveItem
-            // 
-            this.productsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.productsBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("productsBindingNavigatorSaveItem.Image")));
-            this.productsBindingNavigatorSaveItem.Name = "productsBindingNavigatorSaveItem";
-            this.productsBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 28);
-            this.productsBindingNavigatorSaveItem.Text = "Save Data";
-            this.productsBindingNavigatorSaveItem.Click += new System.EventHandler(this.productsBindingNavigatorSaveItem_Click);
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.businessDataSet;
-            // 
-            // businessDataSet
-            // 
-            this.businessDataSet.DataSetName = "BusinessDataSet";
-            this.businessDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -471,6 +214,278 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Width = 120;
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.businessDataSet;
+            // 
+            // businessDataSet
+            // 
+            this.businessDataSet.DataSetName = "BusinessDataSet";
+            this.businessDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // addProductButton
+            // 
+            this.addProductButton.BackColor = System.Drawing.Color.Salmon;
+            this.addProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addProductButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addProductButton.Location = new System.Drawing.Point(199, 311);
+            this.addProductButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addProductButton.Name = "addProductButton";
+            this.addProductButton.Size = new System.Drawing.Size(127, 48);
+            this.addProductButton.TabIndex = 28;
+            this.addProductButton.Text = "Add Product";
+            this.addProductButton.UseVisualStyleBackColor = false;
+            this.addProductButton.Click += new System.EventHandler(this.addProductButton_Click);
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.Location = new System.Drawing.Point(162, 114);
+            this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(203, 68);
+            this.descriptionTextBox.TabIndex = 25;
+            // 
+            // daysTextBox
+            // 
+            this.daysTextBox.Location = new System.Drawing.Point(162, 248);
+            this.daysTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.daysTextBox.Name = "daysTextBox";
+            this.daysTextBox.Size = new System.Drawing.Size(203, 21);
+            this.daysTextBox.TabIndex = 27;
+            // 
+            // addProductLabel
+            // 
+            this.addProductLabel.AutoSize = true;
+            this.addProductLabel.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addProductLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addProductLabel.Location = new System.Drawing.Point(23, 11);
+            this.addProductLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.addProductLabel.Name = "addProductLabel";
+            this.addProductLabel.Size = new System.Drawing.Size(161, 25);
+            this.addProductLabel.TabIndex = 19;
+            this.addProductLabel.Text = "Add Product :";
+            // 
+            // priceTextBox
+            // 
+            this.priceTextBox.Location = new System.Drawing.Point(162, 206);
+            this.priceTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(203, 21);
+            this.priceTextBox.TabIndex = 26;
+            // 
+            // productNameLabel
+            // 
+            this.productNameLabel.AutoSize = true;
+            this.productNameLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.productNameLabel.Location = new System.Drawing.Point(38, 68);
+            this.productNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.productNameLabel.Name = "productNameLabel";
+            this.productNameLabel.Size = new System.Drawing.Size(113, 19);
+            this.productNameLabel.TabIndex = 20;
+            this.productNameLabel.Text = "Product Name:";
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.descriptionLabel.Location = new System.Drawing.Point(63, 119);
+            this.descriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(89, 19);
+            this.descriptionLabel.TabIndex = 21;
+            this.descriptionLabel.Text = "Description:";
+            // 
+            // productNameTextBox
+            // 
+            this.productNameTextBox.Location = new System.Drawing.Point(162, 68);
+            this.productNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.productNameTextBox.Name = "productNameTextBox";
+            this.productNameTextBox.Size = new System.Drawing.Size(203, 21);
+            this.productNameTextBox.TabIndex = 24;
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.priceLabel.Location = new System.Drawing.Point(103, 206);
+            this.priceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(46, 19);
+            this.priceLabel.TabIndex = 22;
+            this.priceLabel.Text = "Price:";
+            // 
+            // daysLabel
+            // 
+            this.daysLabel.AutoSize = true;
+            this.daysLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.daysLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.daysLabel.Location = new System.Drawing.Point(-1, 252);
+            this.daysLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.daysLabel.Name = "daysLabel";
+            this.daysLabel.Size = new System.Drawing.Size(157, 19);
+            this.daysLabel.TabIndex = 23;
+            this.daysLabel.Text = "Days Before Shipping:";
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.BackColor = System.Drawing.Color.Salmon;
+            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.exitBtn.Location = new System.Drawing.Point(941, 21);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(91, 58);
+            this.exitBtn.TabIndex = 6;
+            this.exitBtn.Text = "Exit App";
+            this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
+            // loginBtn
+            // 
+            this.loginBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginBtn.Font = new System.Drawing.Font("Bodoni MT Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.loginBtn.Location = new System.Drawing.Point(1029, 21);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(207, 58);
+            this.loginBtn.TabIndex = 5;
+            this.loginBtn.Text = "Change users";
+            this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
+            // 
+            // productsBindingNavigator
+            // 
+            this.productsBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.productsBindingNavigator.BindingSource = this.productsBindingSource;
+            this.productsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.productsBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.productsBindingNavigator.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.productsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.productsBindingNavigatorSaveItem});
+            this.productsBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.productsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.productsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.productsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.productsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.productsBindingNavigator.Name = "productsBindingNavigator";
+            this.productsBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.productsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.productsBindingNavigator.Size = new System.Drawing.Size(1236, 31);
+            this.productsBindingNavigator.TabIndex = 19;
+            this.productsBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(35, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            // 
+            // productsBindingNavigatorSaveItem
+            // 
+            this.productsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.productsBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("productsBindingNavigatorSaveItem.Image")));
+            this.productsBindingNavigatorSaveItem.Name = "productsBindingNavigatorSaveItem";
+            this.productsBindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
+            this.productsBindingNavigatorSaveItem.Text = "Save Data";
+            this.productsBindingNavigatorSaveItem.Click += new System.EventHandler(this.productsBindingNavigatorSaveItem_Click);
+            // 
             // productsTableAdapter
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
@@ -482,17 +497,117 @@
             this.tableAdapterManager.ProductsTableAdapter = this.productsTableAdapter;
             this.tableAdapterManager.UpdateOrder = SmallBusinessApp.BusinessDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // ordersTab
+            // 
+            this.ordersTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ordersTab.Controls.Add(this.odersLabel);
+            this.ordersTab.Controls.Add(this.ordersDataGridView);
+            this.ordersTab.Location = new System.Drawing.Point(4, 25);
+            this.ordersTab.Name = "ordersTab";
+            this.ordersTab.Size = new System.Drawing.Size(1228, 555);
+            this.ordersTab.TabIndex = 2;
+            this.ordersTab.Text = "Orders";
+            // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataMember = "Orders";
+            this.ordersBindingSource.DataSource = this.businessDataSet;
+            // 
+            // ordersTableAdapter
+            // 
+            this.ordersTableAdapter.ClearBeforeFill = true;
+            // 
+            // ordersDataGridView
+            // 
+            this.ordersDataGridView.AutoGenerateColumns = false;
+            this.ordersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ordersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewCheckBoxColumn1});
+            this.ordersDataGridView.DataSource = this.ordersBindingSource;
+            this.ordersDataGridView.Location = new System.Drawing.Point(185, 61);
+            this.ordersDataGridView.Name = "ordersDataGridView";
+            this.ordersDataGridView.Size = new System.Drawing.Size(843, 471);
+            this.ordersDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "ProductId";
+            this.dataGridViewTextBoxColumn7.HeaderText = "ProductId";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Address";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "BuyerName";
+            this.dataGridViewTextBoxColumn9.HeaderText = "BuyerName";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "CardInfo";
+            this.dataGridViewTextBoxColumn10.HeaderText = "CardInfo";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Price";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "ShippingDate";
+            this.dataGridViewTextBoxColumn12.HeaderText = "ShippingDate";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Status";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Status";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // odersLabel
+            // 
+            this.odersLabel.AutoSize = true;
+            this.odersLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.odersLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.odersLabel.Location = new System.Drawing.Point(185, 21);
+            this.odersLabel.Name = "odersLabel";
+            this.odersLabel.Size = new System.Drawing.Size(107, 24);
+            this.odersLabel.TabIndex = 1;
+            this.odersLabel.Text = "All Orders";
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1854, 1025);
+            this.ClientSize = new System.Drawing.Size(1236, 666);
             this.Controls.Add(this.productsBindingNavigator);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.titleLabel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -500,11 +615,15 @@
             this.productsTabPage.ResumeLayout(false);
             this.productsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.businessDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingNavigator)).EndInit();
             this.productsBindingNavigator.ResumeLayout(false);
             this.productsBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.businessDataSet)).EndInit();
+            this.ordersTab.ResumeLayout(false);
+            this.ordersTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,7 +633,6 @@
 
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage Home;
         private System.Windows.Forms.TabPage productsTabPage;
         private System.Windows.Forms.Button addProductButton;
         private System.Windows.Forms.TextBox descriptionTextBox;
@@ -552,6 +670,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Label allProductsLabel;
+        private System.Windows.Forms.TabPage ordersTab;
+        private System.Windows.Forms.BindingSource ordersBindingSource;
+        private BusinessDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
+        private System.Windows.Forms.DataGridView ordersDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.Label odersLabel;
     }
 }
 

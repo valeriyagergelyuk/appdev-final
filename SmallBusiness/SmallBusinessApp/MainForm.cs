@@ -29,6 +29,8 @@ namespace SmallBusinessApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'businessDataSet.Orders' table. You can move, or remove it, as needed.
+            this.ordersTableAdapter.Fill(this.businessDataSet.Orders);
             // TODO: This line of code loads data into the 'businessDataSet.Products' table. You can move, or remove it, as needed.
             // this.productsTableAdapter.Fill(this.businessDataSet.Products);
             RefreshDataGridView();
