@@ -34,8 +34,11 @@
             this.ordersTableAdapter1 = new SmallBusinessApp.BusinessDataSetTableAdapters.OrdersTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.buyTabPage = new System.Windows.Forms.TabPage();
-            this.serachLabel = new System.Windows.Forms.Label();
+            this.addToCartBtn = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.allProductLabel = new System.Windows.Forms.Label();
+            this.serachLabel = new System.Windows.Forms.Label();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,11 +63,9 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.productsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.addToCartBtn = new System.Windows.Forms.Button();
             this.changeBtn = new System.Windows.Forms.Button();
             this.exitAppBtn = new System.Windows.Forms.Button();
+            this.viewAllProductsButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.buyTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
@@ -99,25 +100,71 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(905, 564);
+            this.tabControl1.Size = new System.Drawing.Size(905, 617);
             this.tabControl1.TabIndex = 4;
             // 
             // buyTabPage
             // 
             this.buyTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buyTabPage.Controls.Add(this.viewAllProductsButton);
             this.buyTabPage.Controls.Add(this.addToCartBtn);
             this.buyTabPage.Controls.Add(this.searchButton);
             this.buyTabPage.Controls.Add(this.searchTextBox);
             this.buyTabPage.Controls.Add(this.allProductLabel);
             this.buyTabPage.Controls.Add(this.serachLabel);
             this.buyTabPage.Controls.Add(this.productsDataGridView);
-            this.buyTabPage.Location = new System.Drawing.Point(4, 26);
+            this.buyTabPage.Location = new System.Drawing.Point(4, 30);
             this.buyTabPage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buyTabPage.Name = "buyTabPage";
             this.buyTabPage.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buyTabPage.Size = new System.Drawing.Size(897, 534);
+            this.buyTabPage.Size = new System.Drawing.Size(897, 583);
             this.buyTabPage.TabIndex = 0;
             this.buyTabPage.Text = "Buy Product";
+            // 
+            // addToCartBtn
+            // 
+            this.addToCartBtn.BackColor = System.Drawing.Color.DarkSalmon;
+            this.addToCartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addToCartBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addToCartBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addToCartBtn.Location = new System.Drawing.Point(373, 501);
+            this.addToCartBtn.Name = "addToCartBtn";
+            this.addToCartBtn.Size = new System.Drawing.Size(148, 46);
+            this.addToCartBtn.TabIndex = 5;
+            this.addToCartBtn.Text = "Add to Cart";
+            this.addToCartBtn.UseVisualStyleBackColor = false;
+            // 
+            // searchButton
+            // 
+            this.searchButton.BackColor = System.Drawing.Color.IndianRed;
+            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.searchButton.Location = new System.Drawing.Point(794, 9);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(94, 23);
+            this.searchButton.TabIndex = 4;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(479, 9);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(309, 30);
+            this.searchTextBox.TabIndex = 3;
+            // 
+            // allProductLabel
+            // 
+            this.allProductLabel.AutoSize = true;
+            this.allProductLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allProductLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.allProductLabel.Location = new System.Drawing.Point(9, 6);
+            this.allProductLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.allProductLabel.Name = "allProductLabel";
+            this.allProductLabel.Size = new System.Drawing.Size(151, 39);
+            this.allProductLabel.TabIndex = 1;
+            this.allProductLabel.Text = "Products";
             // 
             // serachLabel
             // 
@@ -129,18 +176,6 @@
             this.serachLabel.Size = new System.Drawing.Size(901, 41);
             this.serachLabel.TabIndex = 2;
             this.serachLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // allProductLabel
-            // 
-            this.allProductLabel.AutoSize = true;
-            this.allProductLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allProductLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.allProductLabel.Location = new System.Drawing.Point(9, 6);
-            this.allProductLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.allProductLabel.Name = "allProductLabel";
-            this.allProductLabel.Size = new System.Drawing.Size(98, 24);
-            this.allProductLabel.TabIndex = 1;
-            this.allProductLabel.Text = "Products";
             // 
             // productsDataGridView
             // 
@@ -155,7 +190,7 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.productsDataGridView.DataSource = this.productsBindingSource;
-            this.productsDataGridView.Location = new System.Drawing.Point(7, 67);
+            this.productsDataGridView.Location = new System.Drawing.Point(8, 106);
             this.productsDataGridView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.productsDataGridView.Name = "productsDataGridView";
             this.productsDataGridView.RowHeadersWidth = 62;
@@ -170,6 +205,7 @@
             this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -193,6 +229,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Price";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 150;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -215,11 +252,11 @@
             // viewOrdersTabPage
             // 
             this.viewOrdersTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.viewOrdersTabPage.Location = new System.Drawing.Point(4, 26);
+            this.viewOrdersTabPage.Location = new System.Drawing.Point(4, 30);
             this.viewOrdersTabPage.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.viewOrdersTabPage.Name = "viewOrdersTabPage";
             this.viewOrdersTabPage.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.viewOrdersTabPage.Size = new System.Drawing.Size(897, 585);
+            this.viewOrdersTabPage.Size = new System.Drawing.Size(897, 530);
             this.viewOrdersTabPage.TabIndex = 1;
             this.viewOrdersTabPage.Text = "View Orders";
             // 
@@ -261,7 +298,7 @@
             this.productsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.productsBindingNavigator.Name = "productsBindingNavigator";
             this.productsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productsBindingNavigator.Size = new System.Drawing.Size(904, 31);
+            this.productsBindingNavigator.Size = new System.Drawing.Size(904, 33);
             this.productsBindingNavigator.TabIndex = 5;
             this.productsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -271,13 +308,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -287,7 +324,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -296,7 +333,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -305,13 +342,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -326,7 +363,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -334,7 +371,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -343,54 +380,22 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
             // productsBindingNavigatorSaveItem
             // 
             this.productsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.productsBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("productsBindingNavigatorSaveItem.Image")));
             this.productsBindingNavigatorSaveItem.Name = "productsBindingNavigatorSaveItem";
-            this.productsBindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
+            this.productsBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 28);
             this.productsBindingNavigatorSaveItem.Text = "Save Data";
             this.productsBindingNavigatorSaveItem.Click += new System.EventHandler(this.productsBindingNavigatorSaveItem_Click);
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Location = new System.Drawing.Point(479, 9);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(309, 22);
-            this.searchTextBox.TabIndex = 3;
-            // 
-            // searchButton
-            // 
-            this.searchButton.BackColor = System.Drawing.Color.IndianRed;
-            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.searchButton.Location = new System.Drawing.Point(794, 9);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(94, 23);
-            this.searchButton.TabIndex = 4;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = false;
-            // 
-            // addToCartBtn
-            // 
-            this.addToCartBtn.BackColor = System.Drawing.Color.DarkSalmon;
-            this.addToCartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addToCartBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addToCartBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addToCartBtn.Location = new System.Drawing.Point(372, 462);
-            this.addToCartBtn.Name = "addToCartBtn";
-            this.addToCartBtn.Size = new System.Drawing.Size(148, 46);
-            this.addToCartBtn.TabIndex = 5;
-            this.addToCartBtn.Text = "Add to Cart";
-            this.addToCartBtn.UseVisualStyleBackColor = false;
             // 
             // changeBtn
             // 
@@ -420,12 +425,25 @@
             this.exitAppBtn.UseVisualStyleBackColor = false;
             this.exitAppBtn.Click += new System.EventHandler(this.exitAppBtn_Click);
             // 
+            // viewAllProductsButton
+            // 
+            this.viewAllProductsButton.BackColor = System.Drawing.Color.IndianRed;
+            this.viewAllProductsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewAllProductsButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.viewAllProductsButton.Location = new System.Drawing.Point(703, 55);
+            this.viewAllProductsButton.Name = "viewAllProductsButton";
+            this.viewAllProductsButton.Size = new System.Drawing.Size(185, 23);
+            this.viewAllProductsButton.TabIndex = 6;
+            this.viewAllProductsButton.Text = "View All Products";
+            this.viewAllProductsButton.UseVisualStyleBackColor = false;
+            this.viewAllProductsButton.Click += new System.EventHandler(this.viewAllProductsButton_Click);
+            // 
             // BuyerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(904, 670);
+            this.ClientSize = new System.Drawing.Size(904, 722);
             this.Controls.Add(this.exitAppBtn);
             this.Controls.Add(this.changeBtn);
             this.Controls.Add(this.productsBindingNavigator);
@@ -487,5 +505,6 @@
         private System.Windows.Forms.Button addToCartBtn;
         private System.Windows.Forms.Button changeBtn;
         private System.Windows.Forms.Button exitAppBtn;
+        private System.Windows.Forms.Button viewAllProductsButton;
     }
 }
