@@ -8,3 +8,14 @@ C:\Users\I\Desktop\homew\appProg\final\appdev-final\SmallBusiness\SmallBusiness\
 C:\Users\I\Desktop\homew\appProg\final\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.csproj.CoreCompileInputs.cache
 C:\Users\I\Desktop\homew\appProg\final\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.exe
 C:\Users\I\Desktop\homew\appProg\final\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.pdb
+C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\bin\Debug\SmallBusiness.exe.config
+C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\bin\Debug\SmallBusiness.exe
+C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\bin\Debug\SmallBusiness.pdb
+C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.csproj.AssemblyReference.cache
+C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.MainForm.resources
+C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.Properties.Resources.resources
+C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.csproj.GenerateResource.cache
+C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.csproj.CoreCompileInputs.cache
+C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.exe
+C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.pdb
+C:\Users\I\Desktop\homew\appProg\final\ver2\appdev-final\SmallBusiness\SmallBusiness\obj\Debug\SmallBusiness.LoginUser.resources

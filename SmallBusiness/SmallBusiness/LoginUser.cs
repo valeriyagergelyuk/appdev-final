@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SmallBusiness
 {
-    public partial class LoginForm : Form
+    public partial class LoginUser : Form
     {
-        public LoginForm()
+        public LoginUser()
         {
             InitializeComponent();
         }
