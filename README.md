@@ -1,3 +1,4 @@
 # Application Development Final Project
 
-## Description
+# Description
+Our Small Business Manager will be a GUI application created with the objective to help customers of small businesses easily make orders for various products and for those same businesses to keep track of the orders. Depending on the nature of the product ordered (if the order has to be shipped), the customer will have to enter valid personal information, such as their name, address, contact information, phone number, etc. If the order is a custom product, the customer will have to enter descriptions of whatever they wish to receive. The owner of the business keeps track of orders and customers. Both the owner and the customer can contact each other at any time through the messaging function included in the application. The application’s main job is to provide easy functionality for small businesses, more specifically their owners, by offering a useful application, while simultaneously making the transaction easy to use to attract potential customers. 
