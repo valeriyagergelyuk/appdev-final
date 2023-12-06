@@ -54,3 +54,4 @@ C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBu
 C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusinessApp\obj\Debug\SmallBusinessApp.csproj.CoreCompileInputs.cache
 C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusinessApp\obj\Debug\SmallBusinessApp.exe
 C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusinessApp\obj\Debug\SmallBusinessApp.pdb
+C:\Users\jayda\OneDrive\Desktop\AppDevProject\appdev-final\SmallBusiness\SmallBusinessApp\obj\Debug\SmallBusinessApp.PlaceOrderForm.resources

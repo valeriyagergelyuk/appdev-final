@@ -31,7 +31,8 @@ namespace SmallBusinessApp
         {
             // TODO: This line of code loads data into the 'businessDataSet.Products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.Fill(this.businessDataSet.Products);
-
+            this.ordersTableAdapter1.Fill(this.businessDataSet.Orders);
+            //RefreshOrdersDataGridView();
         }
 
         private void exitAppBtn_Click(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace SmallBusinessApp
 
                 using (SqlCommand cmd = new SqlCommand(searchQuery, connection))
                 {
-                    
+
                     cmd.Parameters.AddWithValue("@ProductName", "%" + searchTextBox.Text + "%");
 
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
@@ -82,7 +83,7 @@ namespace SmallBusinessApp
             string currentD = Directory.GetCurrentDirectory();
 
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + currentD + "\\BusinessDatabase.mdf;Integrated Security=True;Connect Timeout=30";
-            
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -101,5 +102,41 @@ namespace SmallBusinessApp
                 }
             }
         }
+
+        private void addToCartBtn_Click(object sender, EventArgs e)
+        {
+            PlaceOrderForm placeOrderForm = new PlaceOrderForm(productsDataGridView.CurrentCell.RowIndex,this);
+            placeOrderForm.ShowDialog();
+        }
+
+
+        public void RefreshOrdersDataGridView()
+        {
+
+            string selectQuery = "SELECT * FROM Orders";
+
+            string currentD = Directory.GetCurrentDirectory();
+
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + currentD + "\\BusinessDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            //string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=SmallBusinessApp\\SmallBusinessApp\\BusinessDatabase.mdf;Integrated Security=True;Connect Timeout=30"; ;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand(selectQuery, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+
+                        var dataTable = new System.Data.DataTable();
+
+                        adapter.Fill(dataTable);
+
+                        ordersDataGridView.DataSource = dataTable;
+                    }
+                }
+            }
+        }
     }
-  }
+}
