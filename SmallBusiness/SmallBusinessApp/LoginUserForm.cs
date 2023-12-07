@@ -33,5 +33,12 @@ namespace SmallBusinessApp
         {
             Application.Exit();
         }
+
+        private void abtLabel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Small Business is an application catered towards freelance artists and small business owners. When choosing to login as a " + 
+                "Seller, you can post new item listings and check all the orders that have been made as well as update their status. As a Buyer, " + 
+                "you can check all the items that are available in the inventoryplace an order, and check the order status.");
+        }
     }
 }

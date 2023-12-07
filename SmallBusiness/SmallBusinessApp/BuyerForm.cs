@@ -138,5 +138,10 @@ namespace SmallBusinessApp
                 }
             }
         }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            RefreshOrdersDataGridView();
+        }
     }
 }

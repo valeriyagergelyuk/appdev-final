@@ -124,5 +124,119 @@ namespace SmallBusinessApp
         {
             this.Close();
         }
+
+        private void statusBtn_Click(object sender, EventArgs e)
+        {
+            
+            string currentD = Directory.GetCurrentDirectory();
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + currentD + "\\BusinessDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+
+            int index = ordersDataGridView.SelectedRows[0].Index;
+            string statusQuery = "Update orders set status = 1 where id = " + (index + 1);
+            
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand(statusQuery, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+
+                        var dataTable = new System.Data.DataTable();
+
+                        adapter.Fill(dataTable);
+
+                        ordersDataGridView.DataSource = dataTable;
+                        RefreshOrdersDataGridView();
+                    }
+                }
+            }
+        }
+
+        public void RefreshOrdersDataGridView()
+        {
+
+            string selectQuery = "SELECT * FROM Orders";
+
+            string currentD = Directory.GetCurrentDirectory();
+
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + currentD + "\\BusinessDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            //string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=SmallBusinessApp\\SmallBusinessApp\\BusinessDatabase.mdf;Integrated Security=True;Connect Timeout=30"; ;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand(selectQuery, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+
+                        var dataTable = new System.Data.DataTable();
+
+                        adapter.Fill(dataTable);
+
+                        ordersDataGridView.DataSource = dataTable;
+                    }
+                }
+            }
+        }
+
+        private void delBtn_Click(object sender, EventArgs e)
+        {
+            string currentD = Directory.GetCurrentDirectory();
+
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + currentD + "\\BusinessDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            int id = 0;
+
+            try
+            {
+                id = Int32.Parse(idTextBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Enter a numeric value!");
+            }
+            if(id != 0)
+            {
+                string delquery = "delete from products where productid = " + id;
+
+                DialogResult result = MessageBox.Show("Are you sure you want to delete the product?", "Confirm", MessageBoxButtons.YesNo);
+
+                if(result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        {
+                            connection.Open();
+
+                            using (SqlCommand cmd = new SqlCommand(delquery, connection))
+                            {
+                                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                                {
+
+                                    var dataTable = new System.Data.DataTable();
+
+                                    adapter.Fill(dataTable);
+
+                                    productsDataGridView.DataSource = dataTable;
+                                    RefreshDataGridView();
+                                }
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Unable to delete the product because it is present in order.");
+                    }
+                }
+
+                
+            }
+            
+        }
     }
 }

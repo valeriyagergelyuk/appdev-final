@@ -54,44 +54,52 @@ namespace SmallBusinessApp
 
             string insertQuery = "INSERT INTO Orders (ProductId, Address, BuyerName,CardInfo,Price,ShippingDate,Status) VALUES (@ProductId, @Address, @BuyerName,@CardInfo,@Price,@ShippingDate,@Status)";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if(productIdTextBox.Text == "" || addressTextBox.Text == "" || nameTextBox.Text == "" || cardInformationTextBox.Text == "" || priceTextBox.Text == "")
             {
-                connection.Open();
-
-                using (SqlCommand cmd = new SqlCommand(insertQuery, connection))
+                MessageBox.Show("All fields must have inputs!");
+            }
+            else
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    try
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(insertQuery, connection))
                     {
-                        cmd.Parameters.AddWithValue("@ProductId", $"{productIdTextBox.Text}");
-                        cmd.Parameters.AddWithValue("@Address", $"{addressTextBox.Text}");
-                        cmd.Parameters.AddWithValue("@BuyerName", $"{nameTextBox.Text}");
-                        cmd.Parameters.AddWithValue("@CardInfo", $"{cardInformationTextBox.Text}");
-                        cmd.Parameters.AddWithValue("@Price", $"{priceTextBox.Text}");
-                        cmd.Parameters.AddWithValue("@ShippingDate", $"{expectedDate}");
-                        cmd.Parameters.AddWithValue("@Status", $"{0}");
-
-                        buyerForm.RefreshOrdersDataGridView();
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        try
                         {
-                            MessageBox.Show("Row inserted successfully!");
+                            cmd.Parameters.AddWithValue("@ProductId", $"{productIdTextBox.Text}");
+                            cmd.Parameters.AddWithValue("@Address", $"{addressTextBox.Text}");
+                            cmd.Parameters.AddWithValue("@BuyerName", $"{nameTextBox.Text}");
+                            cmd.Parameters.AddWithValue("@CardInfo", $"{cardInformationTextBox.Text}");
+                            cmd.Parameters.AddWithValue("@Price", $"{priceTextBox.Text}");
+                            cmd.Parameters.AddWithValue("@ShippingDate", $"{expectedDate}");
+                            cmd.Parameters.AddWithValue("@Status", $"{0}");
 
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Row inserted successfully!");
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error inserting row.");
+                            }
                         }
-                        else
+                        catch
                         {
-                            MessageBox.Show("Error inserting row.");
+                            MessageBox.Show("Error inserting row: Price and Shipping days must contain numeric values!");
                         }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Error inserting row: Price and Shipping days must contain numeric values!");
-                    }
 
 
+                    }
                 }
             }
+
+            
         }
 
 
